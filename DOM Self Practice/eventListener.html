@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .fontStyle{
+            color:red;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1">This is Eveent Listener Heading</h1>
+
+    <button id="btn">CLick Me</button>
+
+    <script>
+        const h1=document.getElementById('h1');
+        const btn=document.getElementById('btn');
+
+        h1.addEventListener('click',()=>{
+            h1.textContent="This is changed by clicking on heading";
+            h1.style.backgroundColor="yellow";
+            h1.style.color="red";
+        })
+        
+        h1.addEventListener('mouseover',()=>{
+            h1.textContent="This is changed by mouseover on heading";
+            h1.style.backgroundColor="green";
+            h1.style.color="white";
+        })
+
+        document.addEventListener("keydown", function() {
+        console.log("Key pressed"); 
+        });
+
+        function releaseKey() {
+        console.log("Key released"); 
+        }
+
+        document.addEventListener("keyup",releaseKey );
+
+        //remove event listener
+        document.removeEventListener("keyup", releaseKey);
+
+        //classList
+
+        btn.addEventListener('click',()=>{
+
+        h1.classList.add("fontStyle"); // adds the class if not present
+        h1.classList.remove("fontStyle"); // removes the class if present
+        h1.classList.toggle("fontStyle")  //if class is present then remove it and if not present then add it
+        })
+;
+    </script>
+</body>
+</html>

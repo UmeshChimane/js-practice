@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="heading">Hello This is Heading <Span>This is span</Span></h1>
+    <p id="paragraph">Hello this is paragraph</p>
+
+    <button id="btn"> Change Heading</button>
+    <br><br>
+        <button id="add_heading"> Add Heading</button>
+        <button id="remove_heading"> Remove Heading</button>
+
+
+</body>
+
+<script>
+    const heading =document.getElementById('heading');
+    const paragraph = document.getElementById('paragraph');
+    const btn = document.getElementById('btn');
+    
+    const add_heading = document.getElementById('add_heading');
+    const remove_heading = document.getElementById('remove_heading');
+
+    btn.addEventListener('click',()=>{
+       heading.textContent="Hello This is New Heading, Changed by clicking button"; 
+       heading.style.backgroundColor="yellow";
+       heading.style.color="red";
+    })
+
+    add_heading.addEventListener('click',()=>{
+        const h2=document.createElement('h2');
+        h2.textContent="Hello This is H2 tag created by using createElement method";
+        h2.setAttribute('id','h2');
+        h2.setAttribute('class','h2');
+        document.body.appendChild(h2);
+    })
+
+    remove_heading.addEventListener('click',()=>{
+        const h2=document.getElementById('h2');
+        if(h2){
+            h2.remove();
+        }else{
+            alert("No H2 tag found to remove"); 
+        }
+    })
+
+    console.log(heading.textContent);
+    console.log(heading.innerHTML);
+    console.log(heading.innerText);
+
+
+</script>
+
+
+</html>
